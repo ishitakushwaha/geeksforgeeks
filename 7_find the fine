@@ -1,0 +1,50 @@
+
+/*package whatever //do not write package name here */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+
+class GFG {
+    public static void main (String[] args)throws IOException {
+        //code
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while(t>0) {
+            
+                int N = sc.nextInt();
+                int D = sc.nextInt();
+                int c[] = new int[N];
+                int f[] = new int[N];
+                for(int j = 0; j < N; j++) {
+                    c[j] = sc.nextInt();
+                }
+                for(int j = 0; j < N; j++) {
+                    f[j] = sc.nextInt();
+                }
+                int sum = 0;
+                if(D%2==0) {
+
+                    for(int j = 0; j< N; j++) {
+                        if(c[j]%2 != 0){
+                            sum += (f[j]);
+                        }
+                    }
+                }
+                else
+                {
+                    for(int j = 0; j<N; j++) {
+                        if((c[j])%2 == 0) {
+                            sum+=(f[j]);
+                        }
+                    }
+                }
+                System.out.println(sum);
+            
+            t--;
+        }
+        
+    }
+}
