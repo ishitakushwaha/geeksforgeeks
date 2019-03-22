@@ -1,0 +1,26 @@
+#code
+t = int(input())
+while t>0:
+    n = int(input())
+    n = (bin(n))
+    n = n[2:]
+    l = len(n)
+    count = 0
+    flag = 0
+    for x in n:
+      
+        if int(x) == 1:
+            count+=1     
+        
+    if count > 1:
+        print(-1)
+    else:
+        i = 0
+        for x in n:
+            i+=1
+            if int(x) == 1:
+                print(l-i+1)
+                
+                
+    
+    t-=1
