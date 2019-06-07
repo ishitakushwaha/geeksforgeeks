@@ -1,0 +1,34 @@
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GFG {
+    public static String toInteger(int n) {
+        String s = "";
+        while(n!=0) {
+            int d = n%2;
+            s = d+s;
+            n = n/2;
+        }
+        int d;
+        if(s.length()!=14) {
+            d = 14-s.length();
+        
+            for(int i = 0; i < d; i++) {
+                s = "0"+s;
+            }
+        }
+        return(s);
+    }
+	public static void main (String[] args)throws IOException {
+		//code
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int t = Integer.parseInt(br.readLine());
+		for(int i = 0; i < t; i++) {
+		    int n = Integer.parseInt(br.readLine());
+		    System.out.println(toInteger(n));
+		}
+		
+	}
+}
