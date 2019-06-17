@@ -1,0 +1,36 @@
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GFG {
+	public static void main (String[] args) {
+		//code
+		Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+		while( t != 0 ) {
+		    int N = sc.nextInt();
+		    int ar[] = new int[N]; 
+		    int flag = 0;
+		    for(int i = 0; i < N; i++) {
+		        ar[i] = sc.nextInt();
+		    }
+		    Arrays.sort(ar);
+		    outerloop:
+		    for(int i = 0; i < N; i++) {
+		        for(int j = i+1; j < N-1; j++)  {
+		            for(int k = 0; k < N; k++) {
+		                if(ar[i]*ar[i] + ar[j]*ar[j] == ar[k]*ar[k]) {
+		                    System.out.println("Yes");
+		                    flag = 1;
+		                    break outerloop;
+		                }
+		            }
+		        }
+		    }
+		    if(flag == 0)
+		        System.out.println("No");
+		    t--;
+		}
+	}
+}
